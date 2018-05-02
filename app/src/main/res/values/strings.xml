@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">NewMeteo</string>
+    <string name="searchHint">Tapes ta ville Mec</string>
 </resources>
