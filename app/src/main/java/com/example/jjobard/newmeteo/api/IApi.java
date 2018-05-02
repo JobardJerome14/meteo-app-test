@@ -1,5 +1,7 @@
 package com.example.jjobard.newmeteo.api;
 
+import com.example.jjobard.newmeteo.model.Meteo;
+
 import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Path;
@@ -10,7 +12,7 @@ public interface IApi {
 
 
     @GET("/data/2.5/weather")
-    Call<Object> getMeteoByCity(
+    Call<Meteo> getMeteoByCity(
             @Query("q") String city,
             @Query("appid") String app_id
             );
