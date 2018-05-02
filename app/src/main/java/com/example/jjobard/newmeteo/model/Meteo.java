@@ -11,5 +11,19 @@ public class Meteo {
     private String return_code;
 
 
+    public String getVille() {
+        return ville;
+    }
 
+    public void setVille(String ville) {
+        this.ville = ville;
+    }
+
+    public String getReturn_code() {
+        return return_code;
+    }
+
+    public void setReturn_code(String return_code) {
+        this.return_code = return_code;
+    }
 }
