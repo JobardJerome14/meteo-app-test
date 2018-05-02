@@ -62,7 +62,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<Meteo> call, Response<Meteo> response) {
                 if(response.isSuccessful()) {
-                    sortie.setText(response.body().getVille());
+                                             Meteo my_meteo = response.body();
+                    String retour = my_meteo.getNuages().getAll()+"\n" + my_meteo.getVille()+ "\n" + my_meteo.getTout().getTemp();
+                    sortie.setText(retour);
                 } else {
                     //TODO
                 }

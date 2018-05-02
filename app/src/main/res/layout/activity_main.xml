@@ -7,9 +7,6 @@
     android:layout_margin="8dp"
     tools:context=".MainActivity">
 
-
-
-
     <EditText
         android:id="@+id/saisie"
         android:layout_width="match_parent"
@@ -35,9 +32,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/saisie"
         android:padding="5dp"
-        tools:text="zjnfkjzn flzkr eklrj     egr srg sgs
-sdfsdf
-sdf"
+        tools:text="zjnfkjzn"
         android:textSize="25sp"
         android:textColor="@color/greenSearch"/>
 </RelativeLayout>

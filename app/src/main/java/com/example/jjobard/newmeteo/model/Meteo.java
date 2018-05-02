@@ -10,6 +10,54 @@ public class Meteo {
     @SerializedName("cod")
     private String return_code;
 
+    @SerializedName("clouds")
+    private Nuages nuages;
+
+
+    @SerializedName("main")
+    private Tout tout;
+
+    public Tout getTout() {
+        return tout;
+    }
+
+    public void setTout(Tout tout) {
+        this.tout = tout;
+    }
+
+    public class Nuages {
+        @SerializedName("all") private int all;
+
+        public int getAll() {
+            return all;
+        }
+
+        public void setAll(int all) {
+            this.all = all;
+        }
+    }
+
+    public class Tout {
+        @SerializedName("temp") private float temp;
+        @SerializedName("pressure") private float pressure;
+
+        public float getTemp() {
+            return temp;
+        }
+
+        public void setTemp(float temp) {
+            this.temp = temp;
+        }
+
+        public float getPressure() {
+            return pressure;
+        }
+
+        public void setPressure(float pressure) {
+            this.pressure = pressure;
+        }
+    }
+
 
     public String getVille() {
         return ville;
@@ -25,5 +73,13 @@ public class Meteo {
 
     public void setReturn_code(String return_code) {
         this.return_code = return_code;
+    }
+
+    public Nuages getNuages() {
+        return nuages;
+    }
+
+    public void setNuages(Nuages nuages) {
+        this.nuages = nuages;
     }
 }
