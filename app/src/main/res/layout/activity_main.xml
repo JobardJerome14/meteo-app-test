@@ -51,7 +51,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/goAct2"
+        android:textColor="@color/white"
         android:layout_below="@+id/sortie"
+        android:background="@drawable/yellow_button"
+        android:padding="3dp"
         />
 
 </RelativeLayout>
