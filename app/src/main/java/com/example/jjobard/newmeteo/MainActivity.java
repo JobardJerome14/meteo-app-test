@@ -10,6 +10,7 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.example.jjobard.newmeteo.api.API;
+import com.example.jjobard.newmeteo.api.SharedP;
 import com.example.jjobard.newmeteo.api.helpers.ResultatCallback;
 import com.example.jjobard.newmeteo.model.Meteo;
 
@@ -25,9 +26,14 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         bindView();
+        fillDisplay();
+
     }
 
+    private void fillDisplay() {
+        this.saisie.setText(new SharedP(this).get_city());
 
+    }
 
     private void bindView() {
         this.saisie = findViewById(R.id.saisie);
@@ -49,15 +55,21 @@ public class MainActivity extends AppCompatActivity {
         imm.hideSoftInputFromWindow(saisie.getWindowToken(), 0);
     }
 
+    private void set_shp_city(String ville) {
+        new SharedP(this).set_city(ville);
+    }
 
 
     private void getMeteoFromInput(String ville) {
+
         API my_api = new API();
 
         my_api.get_meteo_by_city(ville, new ResultatCallback() {
             @Override
             public void onWaitingResultat(Meteo my_meteo) {
                 sortie.setText(my_meteo.toString());
+                set_shp_city(my_meteo.getVille());
+
             }
         });
     }
