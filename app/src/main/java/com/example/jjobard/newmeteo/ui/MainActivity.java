@@ -111,8 +111,7 @@ public class MainActivity extends ActivityBase {
         Bundle bundle = new Bundle();
         bundle.putString(MainActivity.MAINACT_MESSAGE_TO_ACT2, saisie.getText().toString());
 
-        navigate(Main2Activity.class, bundle);
-
+        navigateAndClose(Main2Activity.class, bundle);
 
 
     }
