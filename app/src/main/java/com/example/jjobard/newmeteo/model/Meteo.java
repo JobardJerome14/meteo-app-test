@@ -37,6 +37,11 @@ public class Meteo {
         }
     }
 
+    @Override
+    public String toString() {
+        return this.getTout().getTemp() + "\n" + this.getVille();
+    }
+
     public class Tout {
         @SerializedName("temp") private float temp;
         @SerializedName("pressure") private float pressure;

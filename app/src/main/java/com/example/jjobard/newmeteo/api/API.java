@@ -1,11 +1,7 @@
 package com.example.jjobard.newmeteo.api;
 
-import android.util.Log;
-
+import com.example.jjobard.newmeteo.api.helpers.ResultatCallback;
 import com.example.jjobard.newmeteo.model.Meteo;
-
-import java.io.IOException;
-import java.util.concurrent.TimeUnit;
 
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
@@ -34,17 +30,29 @@ public class API {
         this.iApi = retrofit.create(IApi.class);
     }
 
-    public Call<Meteo> get_meteo_by_city ( String city ) {
+    public void get_meteo_by_city (String city, final ResultatCallback res_callback) {
         // Create a call instance for looking up Retrofit contributors.
         Call<Meteo> call = this.iApi.getMeteoByCity(city, "78d8e5c2d2ef26799bb66865d14dd594");
-        return call;
-//        // Fetch and print a list of the contributors to the library.
-//        try {
-//            Response<Meteo> response = call.execute();
-//            Log.i("getmeteobycity", response.toString());
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
+
+        call.enqueue(new Callback<Meteo>() {
+            @Override
+            public void onResponse(Call<Meteo> call, Response<Meteo> response) {
+                if(response.isSuccessful()) {
+                    Meteo my_meteo = response.body();
+                    res_callback.onWaitingResultat(my_meteo);
+                } else {
+                    //TODO
+                }
+            }
+
+            @Override
+            public void onFailure(Call<Meteo> call, Throwable t) {
+                //TODO
+
+            }
+        });
+
+
 
     }
 
