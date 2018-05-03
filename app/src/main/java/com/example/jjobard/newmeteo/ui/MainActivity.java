@@ -1,4 +1,4 @@
-package com.example.jjobard.newmeteo;
+package com.example.jjobard.newmeteo.ui;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -10,6 +10,7 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+import com.example.jjobard.newmeteo.R;
 import com.example.jjobard.newmeteo.api.API;
 import com.example.jjobard.newmeteo.api.SharedP;
 import com.example.jjobard.newmeteo.api.helpers.ResultatCallback;
