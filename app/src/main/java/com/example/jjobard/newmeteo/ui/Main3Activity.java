@@ -4,8 +4,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.example.jjobard.newmeteo.R;
+import com.example.jjobard.newmeteo.ui.reusable.ActivityBase;
 
-public class Main3Activity extends AppCompatActivity {
+public class Main3Activity extends ActivityBase {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

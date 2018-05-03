@@ -1,6 +1,7 @@
 package com.example.jjobard.newmeteo.ui;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -15,13 +16,15 @@ import com.example.jjobard.newmeteo.api.API;
 import com.example.jjobard.newmeteo.api.SharedP;
 import com.example.jjobard.newmeteo.api.helpers.ResultatCallback;
 import com.example.jjobard.newmeteo.model.Meteo;
+import com.example.jjobard.newmeteo.ui.reusable.ActivityBase;
 
-public class MainActivity extends AppCompatActivity {
-
+public class MainActivity extends ActivityBase {
+    public static final String MAINACT_MESSAGE_TO_ACT2 = "city_to_activity_2";
     private EditText saisie;
     private ImageButton imagesearch;
     private TextView sortie;
     private Button clear_memory;
+    private Button go_nav2;
 
     private SharedP sharedP;
 
@@ -50,6 +53,14 @@ public class MainActivity extends AppCompatActivity {
         this.imagesearch = findViewById(R.id.imagesearch);
         this.sortie = findViewById(R.id.sortie);
         this.clear_memory = findViewById(R.id.clr);
+        this.go_nav2 = findViewById(R.id.goAct2);
+
+        go_nav2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+               navigate();
+            }
+        });
 
         this.imagesearch.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -93,6 +104,17 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+    }
+
+
+    private void navigate() {
+        Bundle bundle = new Bundle();
+        bundle.putString(MainActivity.MAINACT_MESSAGE_TO_ACT2, saisie.getText().toString());
+
+        navigate(Main2Activity.class, bundle);
+
+
+
     }
 
 }

@@ -8,7 +8,7 @@
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:id="@+id/tvAct2"
         android:text="@string/textAct2"
         android:background="@color/flashy2"
@@ -16,5 +16,12 @@
         android:textSize="240sp"
         android:textColor="@color/white"
         />
+
+    <Button
+        android:id="@+id/go_nav_3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvAct2"
+        android:text="@string/goAct3"/>
 
 </RelativeLayout>
