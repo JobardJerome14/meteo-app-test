@@ -15,6 +15,9 @@ public class API {
 
     private IApi iApi;
 
+    /**
+     *
+     */
     public API() {
 
         HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor();

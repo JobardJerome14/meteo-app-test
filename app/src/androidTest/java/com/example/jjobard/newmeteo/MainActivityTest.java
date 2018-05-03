@@ -112,6 +112,5 @@ public class MainActivityTest {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-
     }
 }
