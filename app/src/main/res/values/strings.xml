@@ -2,4 +2,6 @@
     <string name="app_name">NewMeteo</string>
     <string name="searchHint">Tapes ta ville Mec</string>
     <string name="btn_clear">CLEAR MEMORY</string>
+    <string name="textAct2">2</string>
+    <string name="textAct3">3</string>
 </resources>

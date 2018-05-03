@@ -5,4 +5,7 @@
     <color name="colorAccent">#FF4081</color>
     <color name="greenSearch">#11e711</color>
     <color name="redSearch">#bc1e1e</color>
+    <color name="flashy2">#ff22f8</color>
+    <color name="flashy3">#60faff</color>
+    <color name="white">#ffffff</color>
 </resources>
