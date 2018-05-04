@@ -2,7 +2,9 @@ package com.example.jjobard.newmeteo.ui;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -11,6 +13,7 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.jjobard.newmeteo.R;
@@ -27,6 +30,8 @@ public class MainActivity extends ActivityBase {
     private TextView sortie;
     private Button clear_memory;
     private Button go_nav2;
+    private Button photo_btn;
+    private ImageView imageView;
 
     private SharedP sharedP;
 
@@ -56,6 +61,8 @@ public class MainActivity extends ActivityBase {
         this.sortie = findViewById(R.id.sortie);
         this.clear_memory = findViewById(R.id.clr);
         this.go_nav2 = findViewById(R.id.goAct2);
+        this.photo_btn = findViewById(R.id.photo_btn);
+        this.imageView = findViewById(R.id.image_view);
 
         this.saisie.addTextChangedListener(new TextWatcher() {
             @Override
@@ -93,6 +100,13 @@ public class MainActivity extends ActivityBase {
             @Override
             public void onClick(View v) {
                 sharedP.clear_dico_city();
+            }
+        });
+
+        this.photo_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                take_photo();
             }
         });
 
@@ -136,8 +150,21 @@ public class MainActivity extends ActivityBase {
 
     }
 
+    static final int REQUEST_IMAGE_CAPTURE = 1;
+    private void take_photo() {
+            Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+            if (takePictureIntent.resolveActivity(getPackageManager()) != null) {
+                startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE);
+            }
+    }
 
-
-
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
+            Bundle extras = data.getExtras();
+            Bitmap imageBitmap = (Bitmap) extras.get("data");
+            imageView.setImageBitmap(imageBitmap);
+        }
+    }
 
 }

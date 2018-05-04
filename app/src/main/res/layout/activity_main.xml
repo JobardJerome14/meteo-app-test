@@ -27,6 +27,9 @@
         android:layout_alignParentEnd="true"
         />
 
+
+
+
     <ScrollView
         android:layout_below="@id/saisie"
         android:layout_width="match_parent"
@@ -64,6 +67,23 @@
                 android:background="@drawable/yellow_button"
                 android:padding="3dp"
                 />
+
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="PHOTO"
+                android:id="@+id/photo_btn"
+                android:layout_below="@id/goAct2"/>
+
+            <ImageView
+                android:id="@+id/image_view"
+                android:layout_below="@+id/photo_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:scaleType="fitCenter"/>
+
 
         </RelativeLayout>
     </ScrollView>
