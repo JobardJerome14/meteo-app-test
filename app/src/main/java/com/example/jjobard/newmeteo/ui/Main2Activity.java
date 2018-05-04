@@ -15,6 +15,7 @@ public class Main2Activity extends ActivityBase {
     public static final String MESSAGE_TO_NAV3 = "message_nav2_to_nav3";
 
     private Button go_nav_3;
+    private View container;
 
     private String ville;
 
@@ -37,6 +38,7 @@ public class Main2Activity extends ActivityBase {
 
     private void bindView() {
         this.go_nav_3 = findViewById(R.id.go_nav_3);
+        //this.container = findViewById(R.id.view_fragment);
 
         go_nav_3.setOnClickListener(new View.OnClickListener() {
             @Override

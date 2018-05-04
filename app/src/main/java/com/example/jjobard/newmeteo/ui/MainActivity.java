@@ -95,6 +95,7 @@ public class MainActivity extends ActivityBase {
                 sharedP.clear_dico_city();
             }
         });
+
     }
 
     private void hideKeyboard() {
@@ -134,5 +135,9 @@ public class MainActivity extends ActivityBase {
 
 
     }
+
+
+
+
 
 }
