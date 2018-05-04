@@ -6,7 +6,7 @@
     <TextView
         android:id="@+id/tv_meteo"
         tools:text="Test"
-        android:padding="14dp"
+        android:padding="@dimen/size_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 </RelativeLayout>

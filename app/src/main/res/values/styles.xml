@@ -7,5 +7,10 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
-
+    <style name="App_EditTextStyle" parent="@android:style/Widget.EditText">
+        <item name="android:background">@drawable/yellow_button</item>
+        <item name="android:textColor">#fc0000</item>
+        <item name="android:textColorHint">#3b67cf</item>
+        <item name="android:layout_height">155dip</item>
+    </style>
 </resources>
