@@ -4,6 +4,15 @@ import com.google.gson.annotations.SerializedName;
 
 public class Meteo {
 
+    public Meteo () {
+
+
+    }
+
+    public Meteo (String ville) {
+        this.setVille(ville);
+    }
+
     @SerializedName("name")
     private String ville;
 

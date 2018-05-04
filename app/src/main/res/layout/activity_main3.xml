@@ -8,13 +8,19 @@
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="40dp"
         android:id="@+id/tvAct3"
         android:text="@string/textAct3"
         android:gravity="center"
-        android:textSize="240sp"
         android:background="@color/flashy3"
         android:textColor="@color/white"
         />
+
+    <ListView
+        android:id="@+id/listV3"
+        android:layout_below="@+id/tvAct3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    </ListView>
 
 </RelativeLayout>
