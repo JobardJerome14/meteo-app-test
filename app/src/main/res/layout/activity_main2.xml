@@ -24,18 +24,29 @@
         android:layout_below="@+id/tvAct2"
         android:text="@string/goAct3"/>
 
-    <!--<View-->
-        <!--android:id="@+id/view_fragment"-->
-        <!--android:layout_below="@id/go_nav_3"-->
-         <!--android:layout_width="match_parent"-->
-         <!--android:layout_height="match_parent"-->
-        <!--/>-->
-
-    <fragment
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+    <LinearLayout
         android:layout_below="@id/go_nav_3"
-        android:id="@+id/frag"
-        android:name="com.example.jjobard.newmeteo.ui.Main2Fragment"/>
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:id="@+id/view_fragment"
+            android:layout_width="match_parent"
+            android:layout_margin="0dp"
+            android:layout_weight="1"
+            android:layout_height="0dp"
+            />
+
+        <fragment
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:id="@+id/frag"
+            android:name="com.example.jjobard.newmeteo.ui.Main2Fragment"/>
+
+    </LinearLayout>
+
 
 </RelativeLayout>

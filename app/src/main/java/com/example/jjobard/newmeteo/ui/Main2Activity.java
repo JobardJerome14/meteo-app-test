@@ -2,6 +2,8 @@ package com.example.jjobard.newmeteo.ui;
 
 import android.content.Intent;
 import android.graphics.Color;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -32,13 +34,16 @@ public class Main2Activity extends ActivityBase {
         }
 
         bindView();
-
+        loadFragment();
 
     }
 
     private void bindView() {
         this.go_nav_3 = findViewById(R.id.go_nav_3);
         //this.container = findViewById(R.id.view_fragment);
+
+
+
 
         go_nav_3.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -48,6 +53,15 @@ public class Main2Activity extends ActivityBase {
                 navigate(Main3Activity.class, bundle);
             }
         });
+    }
+
+    private void loadFragment() {
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+
+        Main2Fragment fragment = Main2Fragment.newInstance();
+        fragmentTransaction.add(R.id.view_fragment, fragment);
+        fragmentTransaction.commit();
     }
 
 
