@@ -26,35 +26,46 @@
         android:layout_alignParentEnd="true"
         />
 
-    <Button
-        android:id="@+id/clr"
+    <ScrollView
+        android:layout_below="@id/saisie"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/btn_clear"
-        android:textColor="@color/redSearch"
-        android:background="@color/greenSearch"
-        android:layout_margin="8dp"
-        android:layout_below="@+id/saisie"/>
+        android:layout_height="wrap_content">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <Button
+                android:id="@+id/clr"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:text="@string/btn_clear"
+                android:textColor="@color/redSearch"
+                android:background="@color/greenSearch"
+                android:layout_margin="8dp" />
 
-    <TextView
-        android:id="@+id/sortie"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/clr"
-        android:padding="5dp"
-        tools:text="zjnfkjzn"
-        android:textSize="25sp"
-        android:textColor="@color/greenSearch"/>
+            <TextView
+                android:id="@+id/sortie"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="160dp"
+                android:layout_below="@+id/clr"
+                android:padding="5dp"
+                tools:text="zjnfkjzn"
+                android:textSize="25sp"
+                android:textColor="@color/greenSearch"/>
 
-    <Button
-        android:id="@+id/goAct2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/goAct2"
-        android:textColor="@color/white"
-        android:layout_below="@+id/sortie"
-        android:background="@drawable/yellow_button"
-        android:padding="3dp"
-        />
+            <Button
+                android:id="@+id/goAct2"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:text="@string/goAct2"
+                android:textColor="@color/white"
+                android:layout_below="@+id/sortie"
+                android:background="@drawable/yellow_button"
+                android:padding="3dp"
+                />
+
+        </RelativeLayout>
+    </ScrollView>
+
 
 </RelativeLayout>
